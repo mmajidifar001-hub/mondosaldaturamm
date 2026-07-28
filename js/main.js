@@ -7,9 +7,6 @@
 
   const STORAGE_KEY = 'forgeweld-lang';
   let currentLang = localStorage.getItem(STORAGE_KEY) || 'it';
-  const WHATSAPP_PHONE = '393246854375';
-  const WHATSAPP_SHARE_URL = `https://wa.me/${WHATSAPP_PHONE}?text=`;
-  const TELEGRAM_SHARE_URL = 'https://t.me/share/url?url=&text=';
   const SERVICE_LABELS = {
     structural: 'form.service1',
     artistic: 'form.service2',
@@ -20,16 +17,6 @@
   function getServiceLabel(serviceKey) {
     const labelKey = SERVICE_LABELS[serviceKey] || 'form.service4';
     return translations[currentLang][labelKey] || serviceKey;
-  }
-
-  function buildMessageText({ name, email, phone, service, message }) {
-    return [
-      `${translations[currentLang]['form.name']}: ${name}`,
-      `${translations[currentLang]['form.email']}: ${email}`,
-      `${translations[currentLang]['form.phone']}: ${phone || translations[currentLang]['form.notProvided']}`,
-      `${translations[currentLang]['form.service']}: ${getServiceLabel(service)}`,
-      `${translations[currentLang]['form.message']}: ${message}`,
-    ].join('\n');
   }
 
   /* --- Language Switching --- */
@@ -165,54 +152,36 @@
       submitBtn.disabled = true;
       submitBtn.textContent = translations[currentLang]['form.sending'];
 
-      const sendVia = form.querySelector('#send-via')?.value || 'whatsapp';
-      const messageText = buildMessageText({ name, email, phone, service, message });
-      const messagingUrl = sendVia === 'telegram'
-        ? `${TELEGRAM_SHARE_URL}${encodeURIComponent(messageText)}`
-        : `${WHATSAPP_SHARE_URL}${encodeURIComponent(messageText)}`;
-      const isFormspreeConfigured = form.action && !form.action.includes('YOUR_FORM_ID');
+      const formData = new FormData();
+      formData.append('access_key', form.querySelector('[name="access_key"]').value);
+      formData.append('subject', form.querySelector('[name="subject"]').value);
+      formData.append('from_name', form.querySelector('[name="from_name"]').value);
+      formData.append('name', name);
+      formData.append('email', email);
+      formData.append('phone', phone);
+      formData.append('service', getServiceLabel(service));
+      formData.append('message', message);
 
-      window.open(messagingUrl, '_blank', 'noopener,noreferrer');
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { Accept: 'application/json' },
+        });
 
-      if (isFormspreeConfigured) {
-        const formData = new FormData();
-        formData.append('name', name);
-        formData.append('email', email);
-        formData.append('phone', phone);
-        formData.append('service', service);
-        formData.append('message', message);
-        formData.append('_subject', `New inquiry from ${name}`);
-        formData.append('_replyto', email);
-
-        try {
-          const response = await fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: { Accept: 'application/json' },
-          });
-
-          statusEl.classList.remove('hidden', 'form-status--success', 'form-status--error');
-
-          if (response.ok) {
-            statusEl.textContent = translations[currentLang]['form.success'];
-            statusEl.classList.add('form-status--success');
-            form.reset();
-          } else {
-            throw new Error('Form submission failed');
-          }
-        } catch {
-          statusEl.textContent = translations[currentLang]['form.error'];
-          statusEl.classList.add('form-status--error');
-        } finally {
-          submitBtn.disabled = false;
-          submitBtn.textContent = translations[currentLang]['form.submit'];
-          statusEl.classList.remove('hidden');
-        }
-      } else {
         statusEl.classList.remove('hidden', 'form-status--success', 'form-status--error');
-        statusEl.textContent = translations[currentLang]['form.appRedirect'];
-        statusEl.classList.add('form-status--success');
-        form.reset();
+
+        if (response.ok) {
+          statusEl.textContent = translations[currentLang]['form.success'];
+          statusEl.classList.add('form-status--success');
+          form.reset();
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch {
+        statusEl.textContent = translations[currentLang]['form.error'];
+        statusEl.classList.add('form-status--error');
+      } finally {
         submitBtn.disabled = false;
         submitBtn.textContent = translations[currentLang]['form.submit'];
         statusEl.classList.remove('hidden');

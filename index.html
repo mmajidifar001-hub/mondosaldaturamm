@@ -666,11 +666,15 @@
           -->
           <form
             id="contact-form"
-            action="https://formspree.io/f/YOUR_FORM_ID"
+            action="https://api.web3forms.com/submit"
             method="POST"
             class="contact-form"
             novalidate
           >
+            <!-- Web3Forms access key (get yours free at https://web3forms.com) -->
+            <input type="hidden" name="access_key" value="deb5f58b-78b3-4a1e-aae9-477a7521c353">
+            <input type="hidden" name="subject" value="Nuovo messaggio dal sito mondosaldaturamm.it">
+            <input type="hidden" name="from_name" value="Mondo Saldatura MM">
             <!-- Honeypot anti-spam field (hidden from users) -->
             <div class="hidden" aria-hidden="true">
               <label for="website">Website</label>
@@ -700,14 +704,6 @@
                 <option value="artistic" data-i18n="form.service2">Metallo Artistico</option>
                 <option value="repair" data-i18n="form.service3">Riparazioni</option>
                 <option value="other" data-i18n="form.service4">Altro</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="send-via" class="form-label" data-i18n="form.sendVia">Invia tramite</label>
-              <select id="send-via" name="sendVia" class="form-input">
-                <option value="whatsapp" selected data-i18n="form.viaWhatsApp">WhatsApp</option>
-                <option value="telegram" data-i18n="form.viaTelegram">Telegram</option>
               </select>
             </div>
 
