@@ -130,10 +130,6 @@ const translations = {
     'form.sending': 'Invio in corso...',
     'form.success': 'Messaggio inviato! Ti risponderemo entro 24 ore.',
     'form.error': 'Errore durante l\'invio. Riprova o contattaci telefonicamente.',
-    'form.sendVia': 'Invia tramite',
-    'form.viaWhatsApp': 'WhatsApp',
-    'form.viaTelegram': 'Telegram',
-    'form.appRedirect': 'Apre l\'app di messaggistica con il tuo messaggio. Invia per completare.',
     'form.notProvided': 'Non fornito',
 
     'footer.about': 'Maestri del metallo dal 2010. Saldatura professionale MIG & TIG e lavorazione metalli su misura a Limena (PD).',
@@ -266,10 +262,6 @@ const translations = {
     'form.sending': 'Sending...',
     'form.success': 'Message sent! We will respond within 24 hours.',
     'form.error': 'Error sending message. Please try again or call us.',
-    'form.sendVia': 'Send via',
-    'form.viaWhatsApp': 'WhatsApp',
-    'form.viaTelegram': 'Telegram',
-    'form.appRedirect': 'Opening the messaging app with your message. Send to complete.',
     'form.notProvided': 'Not provided',
 
     'footer.about': 'Masters of metal since 2010. Professional MIG & TIG welding and custom metal fabrication in Limena (PD).',

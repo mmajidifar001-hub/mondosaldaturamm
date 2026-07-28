@@ -1,3 +1,8 @@
 .DS_Store
 *.DS_Store
 Untitled/
+
+# Unused source/generated images (kept locally, not in repo)
+Gemini_Generated_Image_*.png
+original-*.png
+file.png
