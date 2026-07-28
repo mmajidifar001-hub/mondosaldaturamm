@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Forge Weld | Saldatura Professionale &amp; Lavorazione Metalli — Limena (PD)</title>
+  <meta name="description" content="Saldature professionali MIG e TIG, precisione e qualità garantite a Limena (PD). Contatto: majid.majidifar111@gmail.com">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Forge Weld — Majid Majidifar">
+  <link rel="canonical" href="https://www.example.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.example.com/">
+  <meta property="og:title" content="Forge Weld | Professional Welding &amp; Metal Fabrication">
+  <meta property="og:description" content="Saldature professionali MIG e TIG, precisione e qualità garantite. 35010 Limena PD, Italia.">
+  <meta property="og:image" content="images/hero-portrait.png">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Forge Weld | Professional Welding &amp; Metal Fabrication">
+  <meta name="twitter:description" content="Structural welding, artistic metalwork, and precision repairs.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1504917595217-d4dc5f64e397?w=1200&h=630&fit=crop">
+
+  <!-- Content Security Policy (prefer HTTP headers in production) -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com;
+    style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    img-src 'self' https://images.unsplash.com data:;
+    connect-src 'self' https://formspree.io;
+    form-action https://formspree.io;
+    frame-ancestors 'none';
+    base-uri 'self';
+  ">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forge: {
+              dark: '#0f0f0f',
+              charcoal: '#1a1a1a',
+              steel: '#2a2a2a',
+              accent: '#e63946',
+              glow: '#ff6b35',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Oswald', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-forge-dark text-gray-100 font-sans antialiased">
+
+  <!-- ========== HEADER / NAVIGATION ========== -->
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 lg:h-20" aria-label="Main navigation">
+      <!-- Logo: replace "FORGE WELD" with your business name -->
+      <a href="#hero" class="flex items-center gap-2 group" aria-label="Home">
+        <span class="w-8 h-8 bg-forge-accent rounded-sm flex items-center justify-center font-display font-bold text-white text-sm">FW</span>
+        <span class="font-display font-bold text-lg tracking-wider uppercase hidden sm:block" data-i18n="brand">Forge Weld</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <ul class="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide uppercase">
+        <li><a href="#hero" class="nav-link" data-i18n="nav.home">Home</a></li>
+        <li><a href="#services" class="nav-link" data-i18n="nav.services">Servizi</a></li>
+        <li><a href="#portfolio" class="nav-link" data-i18n="nav.portfolio">Portfolio</a></li>
+        <li><a href="#about" class="nav-link" data-i18n="nav.about">Chi Siamo</a></li>
+        <li><a href="#hours" class="nav-link" data-i18n="nav.hours">Orari &amp; Mappa</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contatti</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3 sm:gap-4">
+        <!-- Language Toggle -->
+        <button id="lang-toggle" type="button" class="lang-btn" aria-label="Switch language">
+          <span id="lang-label">EN</span>
+        </button>
+
+        <!-- Phone CTA: replace with your number -->
+        <a href="tel:+393246854375" class="hidden md:flex items-center gap-2 text-sm font-semibold text-forge-accent hover:text-forge-glow transition-colors">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+          <span data-i18n="nav.phone">+393246854375</span>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-toggle" type="button" class="lg:hidden p-2 text-gray-300 hover:text-white" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden bg-forge-charcoal border-t border-forge-steel" aria-hidden="true">
+      <ul class="container mx-auto px-4 py-4 flex flex-col gap-1">
+        <li><a href="#hero" class="mobile-nav-link" data-i18n="nav.home">Home</a></li>
+        <li><a href="#services" class="mobile-nav-link" data-i18n="nav.services">Servizi</a></li>
+        <li><a href="#portfolio" class="mobile-nav-link" data-i18n="nav.portfolio">Portfolio</a></li>
+        <li><a href="#about" class="mobile-nav-link" data-i18n="nav.about">Chi Siamo</a></li>
+        <li><a href="#hours" class="mobile-nav-link" data-i18n="nav.hours">Orari &amp; Mappa</a></li>
+        <li><a href="#contact" class="mobile-nav-link" data-i18n="nav.contact">Contatti</a></li>
+        <li class="pt-2 border-t border-forge-steel">
+          <a href="tel:+393246854375" class="mobile-nav-link text-forge-accent" data-i18n="nav.phone">+393246854375</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section id="hero" class="relative min-h-screen flex items-center overflow-hidden pt-20 pb-16">
+      <!-- Background Image Overlay -->
+      <div class="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1504917595217-d4dc5f64e397?w=1920&h=1080&fit=crop&q=80"
+          alt="Saldatore professionale al lavoro con scintille — Professional welder at work with sparks"
+          class="w-full h-full object-cover"
+          width="1920"
+          height="1080"
+          fetchpriority="high"
+        >
+        <div class="absolute inset-0 bg-gradient-to-r from-forge-dark/95 via-forge-dark/85 to-forge-dark/70"></div>
+      </div>
+
+      <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Text Content -->
+          <div class="lg:col-span-7">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-forge-steel/60 border border-forge-accent/40 mb-6 backdrop-blur-md">
+              <span class="w-2 h-2 rounded-full bg-forge-accent animate-pulse"></span>
+              <p class="text-forge-accent font-display text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase" data-i18n="hero.tagline">
+                Maestri del Metallo dal 2010
+              </p>
+            </div>
+
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold uppercase leading-tight mb-6 tracking-tight text-white" data-i18n="hero.headline">
+              Saldatura Professionale &amp; Lavorazione Metalli
+            </h1>
+
+            <p class="text-gray-300 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl" data-i18n="hero.bio">
+              Saldature professionali MIG e TIG, precisione e qualità garantite. Trasformiamo l'acciaio in strutture solide e opere d'arte.
+            </p>
+
+            <!-- Location & Live Status Pills -->
+            <div class="flex flex-wrap items-center gap-3 mb-8">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-forge-charcoal/80 border border-forge-steel text-gray-300 text-xs sm:text-sm font-medium">
+                <svg class="w-4 h-4 text-forge-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <span>35010 Limena PD, Italia</span>
+              </div>
+              <div id="live-status-pill" class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                <span data-i18n="hours.openStatus">Aperto Ora</span>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-4">
+              <a href="#contact" class="btn-primary" data-i18n="hero.cta">Richiedi un Preventivo</a>
+              <a href="#hours" class="btn-outline" data-i18n="nav.hours">Orari &amp; Mappa</a>
+            </div>
+          </div>
+
+          <!-- Featured Artisan Portrait Card -->
+          <div class="lg:col-span-5 flex justify-center lg:justify-end">
+            <div class="relative max-w-sm w-full group">
+              <!-- Glow background -->
+              <div class="absolute -inset-1 bg-gradient-to-r from-forge-accent to-orange-600 rounded-2xl blur-lg opacity-40 group-hover:opacity-75 transition duration-500"></div>
+              
+              <div class="relative rounded-2xl overflow-hidden bg-forge-charcoal border border-forge-steel shadow-2xl">
+                <div class="aspect-[4/5] relative overflow-hidden">
+                  <img
+                    src="images/hero-portrait.png"
+                    alt="Majid Majidifar — Maestro Saldatore &amp; Fabbro a Limena PD"
+                    class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700"
+                    width="640"
+                    height="640"
+                  >
+                  <div class="absolute inset-0 bg-gradient-to-t from-forge-dark via-transparent to-transparent opacity-90"></div>
+                </div>
+
+                <div class="p-5 relative -mt-16 bg-gradient-to-t from-forge-dark via-forge-dark/95 to-transparent pt-8">
+                  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forge-accent/20 border border-forge-accent/40 text-forge-accent text-xs font-bold uppercase tracking-wider mb-2" data-i18n="hero.artisanBadge">
+                    Maestro Artigiano
+                  </div>
+                  <h3 class="font-display text-xl font-bold uppercase text-white tracking-wide" data-i18n="hero.artisanName">
+                    Majid Majidifar
+                  </h3>
+                  <p class="text-xs text-gray-400 mt-1">Saldatura Artistica &amp; Carpenteria — Limena (PD)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Social Icons (Hero sidebar) -->
+      <div class="hidden md:flex flex-col gap-4 absolute right-6 top-1/2 -translate-y-1/2 z-10">
+        <a href="mailto:majid.majidifar111@gmail.com" class="social-icon" aria-label="Email" title="majid.majidifar111@gmail.com">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </a>
+        <a href="#hours" class="social-icon" aria-label="Location" title="35010 Limena PD">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========== SERVICES QUICK ACCESS BAR ========== -->
+    <section id="services" class="relative -mt-16 z-20 pb-16 lg:pb-24" aria-labelledby="services-heading">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 id="services-heading" class="sr-only" data-i18n="services.heading">I Nostri Servizi</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-4">
+          <!-- Service cards: edit titles in js/i18n.js -->
+          <article class="service-card service-card--active">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+            </div>
+            <h3 class="service-card__title" data-i18n="services.item1.title">Saldatura Strutturale</h3>
+          </article>
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+            </div>
+            <h3 class="service-card__title" data-i18n="services.item2.title">Metallo Artistico</h3>
+          </article>
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <h3 class="service-card__title" data-i18n="services.item3.title">Riparazioni di Precisione</h3>
+          </article>
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <h3 class="service-card__title" data-i18n="services.item5.title">Acciaio Inox</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PORTFOLIO SECTION ========== -->
+    <section id="portfolio" class="py-16 lg:py-24 bg-white text-forge-dark" aria-labelledby="portfolio-heading">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <header class="text-center mb-12 lg:mb-16">
+          <p class="text-forge-accent font-display text-sm tracking-[0.3em] uppercase mb-3" data-i18n="portfolio.tagline">I Nostri Progetti</p>
+          <h2 id="portfolio-heading" class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold uppercase" data-i18n="portfolio.heading">
+            Portfolio Lavori
+          </h2>
+          <p class="mt-4 text-gray-600 max-w-2xl mx-auto" data-i18n="portfolio.subtitle">
+            Una selezione dei nostri progetti più recenti in saldatura strutturale, design metallico e riparazioni industriali.
+          </p>
+        </header>
+
+        <!-- Portfolio Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <article class="portfolio-card group">
+            <div class="portfolio-card__image">
+              <img src="images/project-01-gate-dark.png" alt="Cancello ornamentale in ferro battuto su misura — Custom ornamental wrought iron gate" width="600" height="400" loading="lazy">
+            </div>
+            <div class="portfolio-card__body">
+              <span class="portfolio-card__tag" data-i18n="portfolio.item1.tag">Artistico</span>
+              <h3 class="portfolio-card__title" data-i18n="portfolio.item1.title">Cancello in Ferro Battuto</h3>
+              <p class="portfolio-card__desc" data-i18n="portfolio.item1.desc">Cancello ornamentale realizzato su misura con riccioli forgiati a mano, finitura protettiva e dettagli decorativi di alta qualità.</p>
+            </div>
+          </article>
+
+          <article class="portfolio-card group">
+            <div class="portfolio-card__image">
+              <img src="images/project-02-warehouse.png" alt="Carpenteria metallica per capannone industriale — Industrial warehouse steel framework" width="600" height="400" loading="lazy">
+            </div>
+            <div class="portfolio-card__body">
+              <span class="portfolio-card__tag" data-i18n="portfolio.item2.tag">Strutturale</span>
+              <h3 class="portfolio-card__title" data-i18n="portfolio.item2.title">Capannone Industriale</h3>
+              <p class="portfolio-card__desc" data-i18n="portfolio.item2.desc">Progettazione e montaggio di una struttura portante in acciaio zincato per un capannone industriale, con saldature strutturali certificate.</p>
+            </div>
+          </article>
+
+          <article class="portfolio-card group">
+            <div class="portfolio-card__image">
+              <img src="images/project-03-industrial-weld.png" alt="Saldatura industriale su struttura metallica — Industrial welding on metal structure" width="600" height="400" loading="lazy">
+            </div>
+            <div class="portfolio-card__body">
+              <span class="portfolio-card__tag" data-i18n="portfolio.item3.tag">Industriale</span>
+              <h3 class="portfolio-card__title" data-i18n="portfolio.item3.title">Saldatura Industriale</h3>
+              <p class="portfolio-card__desc" data-i18n="portfolio.item3.desc">Intervento di saldatura strutturale su componenti di grandi dimensioni, eseguito in ambiente industriale con tecniche MIG/MAG avanzate.</p>
+            </div>
+          </article>
+
+          <article class="portfolio-card group">
+            <div class="portfolio-card__image">
+              <img src="images/project-04-gate-silver.png" alt="Cancello artigianale con finitura metallica — Handcrafted gate with metallic finish" width="600" height="400" loading="lazy">
+            </div>
+            <div class="portfolio-card__body">
+              <span class="portfolio-card__tag" data-i18n="portfolio.item4.tag">Su Misura</span>
+              <h3 class="portfolio-card__title" data-i18n="portfolio.item4.title">Cancello Artigianale</h3>
+              <p class="portfolio-card__desc" data-i18n="portfolio.item4.desc">Cancello d'ingresso ad arco con motivi decorativi centrali, barre lavorate a mano e finitura metallica resistente agli agenti atmosferici.</p>
+            </div>
+          </article>
+
+          <article class="portfolio-card group">
+            <div class="portfolio-card__image">
+              <img src="images/project-05-manifold.png" alt="Collettore industriale in acciaio saldato — Welded industrial steel manifold" width="600" height="400" loading="lazy">
+            </div>
+            <div class="portfolio-card__body">
+              <span class="portfolio-card__tag" data-i18n="portfolio.item5.tag">Precisione</span>
+              <h3 class="portfolio-card__title" data-i18n="portfolio.item5.title">Collettore Industriale</h3>
+              <p class="portfolio-card__desc" data-i18n="portfolio.item5.desc">Fabbricazione su misura di un collettore in acciaio con raccordi flangiati, progettato per impianti industriali ad alta pressione.</p>
+            </div>
+          </article>
+
+          <article class="portfolio-card group">
+            <div class="portfolio-card__image">
+              <img src="images/project-06-railing.png" alt="Ringhiera in ferro battuto per scale esterne — Wrought iron railing for outdoor stairs" width="600" height="400" loading="lazy">
+            </div>
+            <div class="portfolio-card__body">
+              <span class="portfolio-card__tag" data-i18n="portfolio.item6.tag">Residenziale</span>
+              <h3 class="portfolio-card__title" data-i18n="portfolio.item6.title">Ringhiera Decorativa</h3>
+              <p class="portfolio-card__desc" data-i18n="portfolio.item6.desc">Ringhiera artigianale in ferro battuto con riccioli decorativi e finitura color testa di moro, installata su scala esterna residenziale.</p>
+            </div>
+          </article>
+
+          <article class="portfolio-card group">
+            <div class="portfolio-card__image">
+              <img src="images/project-07-beams.png" alt="Travi strutturali in acciaio con piastre di base — Structural steel beams with base plates" width="600" height="400" loading="lazy">
+            </div>
+            <div class="portfolio-card__body">
+              <span class="portfolio-card__tag" data-i18n="portfolio.item7.tag">Strutturale</span>
+              <h3 class="portfolio-card__title" data-i18n="portfolio.item7.title">Travi in Acciaio</h3>
+              <p class="portfolio-card__desc" data-i18n="portfolio.item7.desc">Preparazione e saldatura di travi strutturali con piastre di base e staffe di montaggio, conformi alle specifiche ingegneristiche del progetto.</p>
+            </div>
+          </article>
+
+          <article class="portfolio-card group">
+            <div class="portfolio-card__image">
+              <img src="images/project-08-staircase.png" alt="Scala industriale in acciaio per soppalco — Industrial steel mezzanine staircase" width="600" height="400" loading="lazy">
+            </div>
+            <div class="portfolio-card__body">
+              <span class="portfolio-card__tag" data-i18n="portfolio.item8.tag">Industriale</span>
+              <h3 class="portfolio-card__title" data-i18n="portfolio.item8.title">Scala per Soppalco</h3>
+              <p class="portfolio-card__desc" data-i18n="portfolio.item8.desc">Realizzazione di una scala industriale in acciaio con gradini antiscivolo e corrimano integrato, progettata per ambienti ad alto traffico.</p>
+            </div>
+          </article>
+
+          <article class="portfolio-card group">
+            <div class="portfolio-card__image">
+              <img src="images/project-09-spiral.png" alt="Scala a chiocciola in metallo su misura — Custom metal spiral staircase" width="600" height="400" loading="lazy">
+            </div>
+            <div class="portfolio-card__body">
+              <span class="portfolio-card__tag" data-i18n="portfolio.item9.tag">Architettonico</span>
+              <h3 class="portfolio-card__title" data-i18n="portfolio.item9.title">Scala a Chiocciola</h3>
+              <p class="portfolio-card__desc" data-i18n="portfolio.item9.desc">Progettazione e fabbricazione di una scala a chiocciola in metallo con saldature di precisione e finitura levigata per interni moderni.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WHY CHOOSE US ========== -->
+    <section id="why-us" class="py-16 lg:py-24 bg-forge-charcoal" aria-labelledby="why-heading">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <header class="text-center mb-12 lg:mb-16">
+          <h2 id="why-heading" class="font-display text-3xl sm:text-4xl font-bold uppercase" data-i18n="why.heading">Perché Sceglierci</h2>
+        </header>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+          <article class="why-card">
+            <div class="why-card__icon" aria-hidden="true">
+              <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+            </div>
+            <h3 class="why-card__title" data-i18n="why.quality.title">Qualità Certificata</h3>
+            <p class="why-card__text" data-i18n="why.quality.desc">Ogni saldatura è eseguita secondo norme EN ISO 9606 e sottoposta a controllo visivo e test non distruttivi.</p>
+          </article>
+          <article class="why-card">
+            <div class="why-card__icon" aria-hidden="true">
+              <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="why-card__title" data-i18n="why.time.title">Puntualità Garantita</h3>
+            <p class="why-card__text" data-i18n="why.time.desc">Rispettiamo scadenze e budget. Il 98% dei nostri progetti viene consegnato in tempo o in anticipo.</p>
+          </article>
+          <article class="why-card">
+            <div class="why-card__icon" aria-hidden="true">
+              <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <h3 class="why-card__title" data-i18n="why.trust.title">Affidabilità Totale</h3>
+            <p class="why-card__text" data-i18n="why.trust.desc">Oltre 15 anni di esperienza e centinaia di clienti soddisfatti in tutta Italia.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section id="about" class="py-16 lg:py-24 bg-white text-forge-dark" aria-labelledby="about-heading">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div>
+            <p class="text-forge-accent font-display text-sm tracking-[0.3em] uppercase mb-3" data-i18n="about.tagline">La Nostra Storia</p>
+            <h2 id="about-heading" class="font-display text-3xl sm:text-4xl font-bold uppercase mb-6" data-i18n="about.heading">Chi Siamo</h2>
+            <p class="text-gray-600 leading-relaxed mb-4" data-i18n="about.p1">
+              Forge Weld nasce dalla passione di Majid Majidifar per la lavorazione del metallo e la saldatura di alta precisione. Specializzato in lavorazioni strutturali, design artistico in ferro e interventi su misura.
+            </p>
+            <p class="text-gray-600 leading-relaxed mb-8" data-i18n="about.p2">
+              Dal nostro laboratorio a Limena (PD) e direttamente in cantiere, offriamo soluzioni personalizzate per privati, architetti e industrie. Ogni pezzo forgiato è un impegno verso la massima qualità.
+            </p>
+            <!-- Certification badges -->
+            <div class="flex flex-wrap gap-4" aria-label="Certifications">
+              <span class="cert-badge">MIG / MAG Welding</span>
+              <span class="cert-badge">TIG Precision</span>
+              <span class="cert-badge">EN ISO 9606</span>
+            </div>
+          </div>
+          <div class="relative rounded-xl overflow-hidden shadow-2xl bg-forge-charcoal group">
+            <div class="aspect-[4/3] relative overflow-hidden">
+              <img
+                src="images/hero-portrait.png"
+                alt="Majid Majidifar nel suo laboratorio di saldatura a Limena"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                width="800"
+                height="600"
+                loading="lazy"
+              >
+            </div>
+            <div class="p-4 bg-forge-charcoal text-white border-t border-forge-steel flex items-center justify-between">
+              <div>
+                <p class="font-display font-semibold uppercase text-sm" data-i18n="about.artisanTitle">Majid Majidifar — Maestro Saldatore &amp; Fabbro</p>
+                <p class="text-xs text-gray-400">35010 Limena PD, Italia</p>
+              </div>
+              <span class="w-3 h-3 rounded-full bg-forge-accent"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== OPENING HOURS & LOCATION SECTION ========== -->
+    <section id="hours" class="py-16 lg:py-24 bg-forge-dark text-white border-t border-b border-forge-steel" aria-labelledby="hours-heading">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <header class="text-center mb-12 lg:mb-16">
+          <p class="text-forge-accent font-display text-sm tracking-[0.3em] uppercase mb-3" data-i18n="hours.tagline">Dove Trovarci &amp; Quando Siamo Aperti</p>
+          <h2 id="hours-heading" class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold uppercase" data-i18n="hours.heading">
+            Orari di Apertura &amp; Posizione
+          </h2>
+          <p class="mt-4 text-gray-300 text-base sm:text-lg max-w-2xl mx-auto" data-i18n="hours.subtitle">
+            Saldature professionali MIG e TIG, precisione e qualità garantite.
+          </p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          
+          <!-- Opening Hours Table (Matching Image 3) -->
+          <div class="lg:col-span-5 bg-forge-charcoal p-6 sm:p-8 rounded-xl border border-forge-steel shadow-xl">
+            <div class="flex items-center justify-between mb-6 pb-4 border-b border-forge-steel">
+              <h3 class="font-display text-xl font-bold uppercase text-white tracking-wider flex items-center gap-2">
+                <svg class="w-5 h-5 text-forge-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span data-i18n="hours.heading">Orari di Apertura</span>
+              </h3>
+            </div>
+
+            <!-- Weekly Schedule List -->
+            <div class="space-y-2 text-sm sm:text-base">
+              
+              <!-- Friday -->
+              <div data-day="5" class="flex items-center justify-between p-3 transition-colors hover:bg-forge-steel/40">
+                <span class="font-medium text-gray-200 flex items-center gap-2">
+                  <span data-i18n="hours.friday">Friday</span>
+                  <span class="today-badge hidden px-2 py-0.5 text-[10px] uppercase tracking-wider font-bold bg-forge-accent text-white rounded">Oggi</span>
+                </span>
+                <span class="text-right text-gray-300 font-mono text-sm leading-tight">
+                  08:30 - 12:00<br>13:00 - 17:30
+                </span>
+              </div>
+
+              <!-- Saturday -->
+              <div data-day="6" class="flex items-center justify-between p-3 transition-colors hover:bg-forge-steel/40">
+                <span class="font-medium text-gray-200 flex items-center gap-2">
+                  <span data-i18n="hours.saturday">Saturday</span>
+                  <span class="today-badge hidden px-2 py-0.5 text-[10px] uppercase tracking-wider font-bold bg-forge-accent text-white rounded">Oggi</span>
+                </span>
+                <span class="text-right text-gray-300 font-mono text-sm">
+                  08:00 - 12:00
+                </span>
+              </div>
+
+              <!-- Sunday -->
+              <div data-day="0" class="flex items-center justify-between p-3 transition-colors hover:bg-forge-steel/40">
+                <span class="font-medium text-gray-200 flex items-center gap-2">
+                  <span data-i18n="hours.sunday">Sunday</span>
+                  <span class="today-badge hidden px-2 py-0.5 text-[10px] uppercase tracking-wider font-bold bg-forge-accent text-white rounded">Oggi</span>
+                </span>
+                <span class="text-right text-rose-400 font-semibold text-sm uppercase tracking-wider" data-i18n="hours.sunTime">
+                  Closed
+                </span>
+              </div>
+
+              <!-- Monday -->
+              <div data-day="1" class="flex items-center justify-between p-3 transition-colors hover:bg-forge-steel/40">
+                <span class="font-medium text-gray-200 flex items-center gap-2">
+                  <span data-i18n="hours.monday">Monday</span>
+                  <span class="today-badge hidden px-2 py-0.5 text-[10px] uppercase tracking-wider font-bold bg-forge-accent text-white rounded">Oggi</span>
+                </span>
+                <span class="text-right text-gray-300 font-mono text-sm leading-tight">
+                  08:30 - 12:00<br>13:00 - 17:30
+                </span>
+              </div>
+
+              <!-- Tuesday -->
+              <div data-day="2" class="flex items-center justify-between p-3 transition-colors hover:bg-forge-steel/40">
+                <span class="font-medium text-gray-200 flex items-center gap-2">
+                  <span data-i18n="hours.tuesday">Tuesday</span>
+                  <span class="today-badge hidden px-2 py-0.5 text-[10px] uppercase tracking-wider font-bold bg-forge-accent text-white rounded">Oggi</span>
+                </span>
+                <span class="text-right text-gray-300 font-mono text-sm leading-tight">
+                  08:30 - 12:00<br>13:00 - 17:30
+                </span>
+              </div>
+
+              <!-- Wednesday -->
+              <div data-day="3" class="flex items-center justify-between p-3 transition-colors hover:bg-forge-steel/40">
+                <span class="font-medium text-gray-200 flex items-center gap-2">
+                  <span data-i18n="hours.wednesday">Wednesday</span>
+                  <span class="today-badge hidden px-2 py-0.5 text-[10px] uppercase tracking-wider font-bold bg-forge-accent text-white rounded">Oggi</span>
+                </span>
+                <span class="text-right text-gray-300 font-mono text-sm leading-tight">
+                  08:30 - 12:00<br>13:00 - 17:30
+                </span>
+              </div>
+
+              <!-- Thursday -->
+              <div data-day="4" class="flex items-center justify-between p-3 transition-colors hover:bg-forge-steel/40">
+                <span class="font-medium text-gray-200 flex items-center gap-2">
+                  <span data-i18n="hours.thursday">Thursday</span>
+                  <span class="today-badge hidden px-2 py-0.5 text-[10px] uppercase tracking-wider font-bold bg-forge-accent text-white rounded">Oggi</span>
+                </span>
+                <span class="text-right text-gray-300 font-mono text-sm leading-tight">
+                  08:30 - 12:00<br>13:00 - 17:30
+                </span>
+              </div>
+
+            </div>
+
+            <!-- Email contact quick bar -->
+            <div class="mt-6 pt-4 border-t border-forge-steel flex items-center justify-between text-sm">
+              <span class="text-gray-400">Email:</span>
+              <a href="mailto:majid.majidifar111@gmail.com" class="text-emerald-400 font-medium hover:underline font-mono">
+                majid.majidifar111@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <!-- Location & Interactive Dark Map -->
+          <div class="lg:col-span-7 flex flex-col h-full justify-between">
+            <div class="bg-forge-charcoal p-6 sm:p-8 rounded-xl border border-forge-steel shadow-xl mb-6">
+              <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+                <div>
+                  <p class="text-xs uppercase tracking-widest text-forge-accent font-bold" data-i18n="hours.locationHeading">La Nostra Sede</p>
+                  <h3 class="font-display text-2xl font-bold uppercase text-white mt-1">35010 Limena PD, Italia</h3>
+                </div>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=35010+Limena+PD+Italia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-primary text-xs py-2 px-4 inline-flex items-center gap-2"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  <span data-i18n="hours.getDirections">Ottieni Indicazioni</span>
+                </a>
+              </div>
+              <p class="text-gray-400 text-sm">Laboratorio di saldatura e lavorazione metalli situato a Limena (Padova). Interventi su appuntamento e preventivi in sede.</p>
+            </div>
+
+            <!-- Map Iframe Container with Dark Theme Filter -->
+            <div class="relative rounded-xl overflow-hidden border border-forge-steel aspect-[16/10] shadow-2xl bg-forge-charcoal">
+              <iframe
+                title="Mappa Forge Weld Limena PD"
+                width="100%"
+                height="100%"
+                style="border:0; filter: grayscale(100%) invert(92%) contrast(83%);"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://maps.google.com/maps?q=35010%20Limena%20PD%20Italia&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              ></iframe>
+              <div class="absolute bottom-4 left-4 bg-forge-dark/90 backdrop-blur-md px-4 py-2 rounded-lg border border-forge-steel text-xs font-semibold text-white flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-forge-accent"></span>
+                <span>Limena (PD), Italia</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== CONTACT & SOCIALS ========== -->
+    <section id="contact" class="py-16 lg:py-24 bg-forge-charcoal" aria-labelledby="contact-heading">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+
+          <!-- Contact Info -->
+          <div>
+            <p class="text-forge-accent font-display text-sm tracking-[0.3em] uppercase mb-3" data-i18n="contact.tagline">Parliamo del Tuo Progetto</p>
+            <h2 id="contact-heading" class="font-display text-3xl sm:text-4xl font-bold uppercase mb-6" data-i18n="contact.heading">Contattaci</h2>
+            <p class="text-gray-400 mb-8 leading-relaxed" data-i18n="contact.intro">
+              Hai un progetto in mente? Compila il modulo o contattaci direttamente. Rispondiamo entro 24 ore lavorative.
+            </p>
+
+            <address class="not-italic space-y-4 mb-8">
+              <p class="flex items-start gap-3 text-gray-300">
+                <svg class="w-5 h-5 mt-0.5 text-forge-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <span data-i18n="contact.address">35010 Limena PD, Italia</span>
+              </p>
+              <p class="flex items-center gap-3 text-gray-300">
+                <svg class="w-5 h-5 text-forge-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <a href="tel:+393246854375" class="hover:text-forge-accent transition-colors" data-i18n="contact.phone">+39 324 685 4375</a>
+              </p>
+              <p class="flex items-center gap-3 text-gray-300">
+                <svg class="w-5 h-5 text-forge-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <a href="mailto:majid.majidifar111@gmail.com" class="hover:text-forge-accent transition-colors font-mono" data-i18n="contact.email">majid.majidifar111@gmail.com</a>
+              </p>
+            </address>
+
+            <!-- Social Links -->
+            <div class="flex gap-4">
+              <a href="https://t.me/+393246854375" class="social-link" aria-label="Telegram" rel="noopener noreferrer" target="_blank">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.5 3.1c-.2-.8-.9-1.3-1.7-1.3-.4 0-.8.1-1.2.3L2.6 9.8c-.9.4-1.1 1.5-.3 2.1l3.6 2.8 1.4 4.4c.2.8.9 1.3 1.7 1.3.4 0 .8-.1 1.2-.3l1.9-1.1 3.6 2.5c.3.2.7.3 1.1.3.8 0 1.5-.5 1.7-1.3l3.3-15.4c.1-.2.1-.5 0-.8zm-5.3 4.6l-7 4.7c-.2.1-.3.3-.2.5l1 3.2c0 .2-.1.4-.3.4-.1 0-.2 0-.3-.1l-1.6-1.4c-.3-.2-.5-.5-.4-.9l.3-4.5c0-.3.2-.5.4-.7l8.1-4.4c.3-.2.6-.1.8.1.2.2.2.6 0 .8z"/></svg>
+              </a>
+              <a href="https://wa.me/393246854375" class="social-link" aria-label="WhatsApp" rel="noopener noreferrer" target="_blank">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <!--
+            FORMSPREE SETUP:
+            1. Sign up at https://formspree.io
+            2. Create a new form and copy your form ID
+            3. Replace "YOUR_FORM_ID" below with your actual ID
+            Alternative: Use Netlify Forms by adding data-netlify="true" and deploying to Netlify
+          -->
+          <form
+            id="contact-form"
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST"
+            class="contact-form"
+            novalidate
+          >
+            <!-- Honeypot anti-spam field (hidden from users) -->
+            <div class="hidden" aria-hidden="true">
+              <label for="website">Website</label>
+              <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+              <label for="name" class="form-label" data-i18n="form.name">Nome Completo</label>
+              <input type="text" id="name" name="name" required maxlength="100" autocomplete="name" class="form-input" data-i18n-placeholder="form.namePlaceholder">
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label" data-i18n="form.email">Email</label>
+              <input type="email" id="email" name="email" required maxlength="254" autocomplete="email" class="form-input" data-i18n-placeholder="form.emailPlaceholder">
+            </div>
+
+            <div class="form-group">
+              <label for="phone" class="form-label" data-i18n="form.phone">Telefono (opzionale)</label>
+              <input type="tel" id="phone" name="phone" maxlength="20" autocomplete="tel" class="form-input" data-i18n-placeholder="form.phonePlaceholder">
+            </div>
+
+            <div class="form-group">
+              <label for="service" class="form-label" data-i18n="form.service">Tipo di Servizio</label>
+              <select id="service" name="service" required class="form-input">
+                <option value="" data-i18n="form.serviceDefault">Seleziona un servizio</option>
+                <option value="structural" data-i18n="form.service1">Saldatura Strutturale</option>
+                <option value="artistic" data-i18n="form.service2">Metallo Artistico</option>
+                <option value="repair" data-i18n="form.service3">Riparazioni</option>
+                <option value="other" data-i18n="form.service4">Altro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="send-via" class="form-label" data-i18n="form.sendVia">Invia tramite</label>
+              <select id="send-via" name="sendVia" class="form-input">
+                <option value="whatsapp" selected data-i18n="form.viaWhatsApp">WhatsApp</option>
+                <option value="telegram" data-i18n="form.viaTelegram">Telegram</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label" data-i18n="form.message">Messaggio</label>
+              <textarea id="message" name="message" required maxlength="2000" rows="5" class="form-input form-textarea" data-i18n-placeholder="form.messagePlaceholder"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary w-full" id="submit-btn" data-i18n="form.submit">Invia Messaggio</button>
+
+            <p id="form-status" class="form-status hidden" role="status" aria-live="polite"></p>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-forge-dark border-t border-forge-steel py-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="#hero" class="flex items-center gap-2 mb-4">
+            <span class="w-8 h-8 bg-forge-accent rounded-sm flex items-center justify-center font-display font-bold text-white text-sm">FW</span>
+            <span class="font-display font-bold text-lg tracking-wider uppercase" data-i18n="brand">Forge Weld</span>
+          </a>
+          <p class="text-gray-500 text-sm leading-relaxed" data-i18n="footer.about">
+            Maestri del metallo dal 2010. Saldatura professionale e lavorazione metalli su misura in tutta Italia.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-display font-semibold uppercase tracking-wide mb-4 text-sm" data-i18n="footer.links">Link Rapidi</h3>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li><a href="#hero" class="hover:text-forge-accent transition-colors" data-i18n="nav.home">Home</a></li>
+            <li><a href="#services" class="hover:text-forge-accent transition-colors" data-i18n="nav.services">Servizi</a></li>
+            <li><a href="#portfolio" class="hover:text-forge-accent transition-colors" data-i18n="nav.portfolio">Portfolio</a></li>
+            <li><a href="#about" class="hover:text-forge-accent transition-colors" data-i18n="nav.about">Chi Siamo</a></li>
+            <li><a href="#hours" class="hover:text-forge-accent transition-colors" data-i18n="nav.hours">Orari &amp; Mappa</a></li>
+            <li><a href="#contact" class="hover:text-forge-accent transition-colors" data-i18n="nav.contact">Contatti</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-display font-semibold uppercase tracking-wide mb-4 text-sm" data-i18n="footer.services">Servizi</h3>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li data-i18n="services.item1.title">Saldatura Strutturale</li>
+            <li data-i18n="services.item2.title">Metallo Artistico</li>
+            <li data-i18n="services.item3.title">Riparazioni di Precisione</li>
+            <li data-i18n="services.item4.title">TIG &amp; MIG</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-display font-semibold uppercase tracking-wide mb-4 text-sm" data-i18n="footer.contact">Contatti</h3>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li data-i18n="contact.address">35010 Limena PD, Italia</li>
+            <li><a href="tel:+393246854375" class="hover:text-forge-accent transition-colors" data-i18n="contact.phone">+393246854375</a></li>
+            <li><a href="mailto:majid.majidifar111@gmail.com" class="hover:text-forge-accent transition-colors font-mono" data-i18n="contact.email">majid.majidifar111@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-forge-steel pt-8 text-center text-sm text-gray-600">
+        <p>&copy; <span id="year"></span> <span data-i18n="brand">Forge Weld</span>. <span data-i18n="footer.rights">Tutti i diritti riservati.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

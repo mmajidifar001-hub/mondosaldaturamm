@@ -1,0 +1,467 @@
+/* =============================================
+   FORGE WELD — Custom Styles
+   Complements Tailwind CSS utility classes
+   ============================================= */
+
+/* --- Base --- */
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: #e63946;
+  color: #fff;
+}
+
+/* Screen-reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --- Header --- */
+#site-header {
+  background: transparent;
+}
+
+#site-header.is-scrolled {
+  background: rgba(15, 15, 15, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.nav-link {
+  color: #d1d5db;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: #e63946;
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: 0.75rem 0;
+  color: #d1d5db;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link:focus-visible {
+  color: #e63946;
+}
+
+/* --- Language Toggle --- */
+.lang-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid #2a2a2a;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #d1d5db;
+  background: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lang-btn:hover,
+.lang-btn:focus-visible {
+  border-color: #e63946;
+  color: #e63946;
+}
+
+/* --- Buttons --- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  background: #e63946;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: #ff6b35;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(230, 57, 70, 0.4);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  border: 2px solid #fff;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover,
+.btn-outline:focus-visible {
+  background: #fff;
+  color: #0f0f0f;
+}
+
+/* --- Social Icons (Hero) --- */
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
+.social-icon:hover,
+.social-icon:focus-visible {
+  background: #e63946;
+  border-color: #e63946;
+  transform: scale(1.1);
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  background: #2a2a2a;
+  border-radius: 50%;
+  color: #d1d5db;
+  transition: all 0.2s ease;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+  background: #e63946;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* --- Service Cards --- */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.5rem 1rem;
+  background: #fff;
+  color: #0f0f0f;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.25rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  min-height: 140px;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-card--active {
+  background: #e63946;
+  color: #fff;
+  border-color: #e63946;
+}
+
+.service-card--active .service-card__icon {
+  color: #fff;
+}
+
+.service-card__icon {
+  color: #e63946;
+}
+
+.service-card__title {
+  font-family: 'Oswald', system-ui, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.3;
+}
+
+@media (min-width: 1024px) {
+  .service-card__title {
+    font-size: 0.875rem;
+  }
+}
+
+/* --- Portfolio Cards --- */
+.portfolio-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.portfolio-card__image {
+  overflow: hidden;
+  aspect-ratio: 3 / 2;
+}
+
+.portfolio-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.portfolio-card:hover .portfolio-card__image img {
+  transform: scale(1.05);
+}
+
+.portfolio-card__body {
+  padding: 1.25rem;
+}
+
+.portfolio-card__tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #e63946;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-card__title {
+  font-family: 'Oswald', system-ui, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.portfolio-card__date {
+  display: block;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-card__desc {
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* --- Why Choose Us --- */
+.why-card {
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.why-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 5rem;
+  border: 2px solid #e63946;
+  border-radius: 50%;
+  color: #e63946;
+  margin-bottom: 1.5rem;
+}
+
+.why-card__title {
+  font-family: 'Oswald', system-ui, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.why-card__text {
+  color: #9ca3af;
+  line-height: 1.6;
+  font-size: 0.9375rem;
+}
+
+/* --- About --- */
+.cert-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #374151;
+}
+
+.play-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  background: #e63946;
+  color: #fff;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.play-btn:hover:not(:disabled) {
+  background: #ff6b35;
+  transform: scale(1.1);
+}
+
+.play-btn:disabled {
+  opacity: 0.8;
+  cursor: default;
+}
+
+/* --- Contact Form --- */
+.contact-form {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #d1d5db;
+  margin-bottom: 0.5rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #0f0f0f;
+  border: 1px solid #2a2a2a;
+  border-radius: 0.25rem;
+  color: #f3f4f6;
+  font-size: 0.9375rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input::placeholder {
+  color: #6b7280;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #e63946;
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.15);
+}
+
+.form-input.is-invalid {
+  border-color: #ef4444;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-status {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.form-status--success {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.form-status--error {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* --- Animations --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* --- Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
