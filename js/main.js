@@ -147,6 +147,13 @@
         form.querySelector('#message').classList.add('is-invalid');
         hasError = true;
       }
+      const privacy = form.querySelector('#privacy');
+      if (privacy && !privacy.checked) {
+        privacy.closest('.form-consent').classList.add('is-invalid');
+        hasError = true;
+      } else if (privacy) {
+        privacy.closest('.form-consent').classList.remove('is-invalid');
+      }
       if (hasError) return;
 
       submitBtn.disabled = true;

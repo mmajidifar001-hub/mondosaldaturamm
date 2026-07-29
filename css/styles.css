@@ -410,6 +410,14 @@ html {
   border-color: #ef4444;
 }
 
+.form-consent.is-invalid span {
+  color: #ef4444;
+}
+
+.form-consent.is-invalid input {
+  outline: 2px solid #ef4444;
+}
+
 .form-textarea {
   resize: vertical;
   min-height: 120px;

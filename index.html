@@ -19,7 +19,7 @@
   <meta property="og:url" content="https://www.mondosaldaturamm.it/">
   <meta property="og:title" content="Forge Weld | Professional Welding &amp; Metal Fabrication">
   <meta property="og:description" content="Saldature professionali MIG e TIG, precisione e qualità garantite. 35010 Limena PD, Italia.">
-  <meta property="og:image" content="images/hero-portrait.png">
+  <meta property="og:image" content="https://www.mondosaldaturamm.it/images/hero-portrait.png">
   <meta property="og:locale" content="it_IT">
   <meta property="og:locale:alternate" content="en_US">
 
@@ -27,7 +27,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Forge Weld | Professional Welding &amp; Metal Fabrication">
   <meta name="twitter:description" content="Structural welding, artistic metalwork, and precision repairs.">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1504917595217-d4dc5f64e397?w=1200&h=630&fit=crop">
+  <meta name="twitter:image" content="https://www.mondosaldaturamm.it/images/project-03-industrial-weld.png">
 
   <!-- Content Security Policy (prefer HTTP headers in production) -->
   <meta http-equiv="Content-Security-Policy" content="
@@ -35,7 +35,7 @@
     script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com;
     style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://fonts.googleapis.com;
     font-src 'self' https://fonts.gstatic.com;
-    img-src 'self' https://images.unsplash.com data:;
+    img-src 'self' data:;
     connect-src 'self' https://api.web3forms.com;
     form-action 'self' https://api.web3forms.com;
     frame-src https://www.openstreetmap.org;
@@ -138,7 +138,7 @@
       <!-- Background Image Overlay -->
       <div class="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1504917595217-d4dc5f64e397?w=1920&h=1080&fit=crop&q=80"
+          src="images/project-03-industrial-weld.png"
           alt="Saldatore professionale al lavoro con scintille — Professional welder at work with sparks"
           class="w-full h-full object-cover"
           width="1920"
@@ -739,6 +739,13 @@
             <div class="form-group">
               <label for="message" class="form-label" data-i18n="form.message">Messaggio</label>
               <textarea id="message" name="message" required maxlength="2000" rows="5" class="form-input form-textarea" data-i18n-placeholder="form.messagePlaceholder"></textarea>
+            </div>
+
+            <div class="form-group form-consent">
+              <label for="privacy" class="flex items-start gap-2 text-sm text-gray-400 cursor-pointer">
+                <input type="checkbox" id="privacy" name="privacy" required class="mt-1 shrink-0">
+                <span data-i18n="form.privacy">Ho letto e accetto il trattamento dei miei dati personali per essere ricontattato. I dati non saranno condivisi con terzi.</span>
+              </label>
             </div>
 
             <button type="submit" class="btn-primary w-full" id="submit-btn" data-i18n="form.submit">Invia Messaggio</button>
