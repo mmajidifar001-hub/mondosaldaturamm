@@ -32,8 +32,8 @@
   <!-- Content Security Policy (prefer HTTP headers in production) -->
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
-    script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com;
-    style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://fonts.googleapis.com;
+    script-src 'self' 'unsafe-inline';
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
     font-src 'self' https://fonts.gstatic.com;
     img-src 'self' data:;
     connect-src 'self' https://api.web3forms.com;
@@ -43,29 +43,8 @@
     base-uri 'self';
   ">
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            forge: {
-              dark: '#0f0f0f',
-              charcoal: '#1a1a1a',
-              steel: '#2a2a2a',
-              accent: '#e63946',
-              glow: '#ff6b35',
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-            display: ['Oswald', 'system-ui', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Tailwind CSS (compiled, production) -->
+  <link rel="stylesheet" href="css/tailwind.css">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
